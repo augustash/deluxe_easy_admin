@@ -11,7 +11,6 @@ html body.easy-admin-fixed {
   top: 0px;
   left: 0;
   right: 0;
-  height: 42px;
   width: auto;
   z-index:1000; 
 
@@ -126,7 +125,6 @@ html body.easy-admin-fixed {
 .easy-admin ul.manager-menu li a,
 .easy-admin ul.manager-menu span.nolink {
     font-family: 'Droid Sans', helvetica neue, arial, sans-serif;
-    font-size: 13px;
     font-weight: 200;
     letter-spacing: 0.05em;
     line-height: 22px;
@@ -225,11 +223,10 @@ html body.easy-admin-fixed {
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
-    line-height: 1;
+    line-height: 2rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0 6px 0 0;
-    font-size: 15px;
     color: #aaa;
     content: "\f067";
 }
@@ -268,7 +265,7 @@ html body.easy-admin-fixed {
 /* User Menu */
 .easy-admin ul.user > li {
   display: inline-block;
-  line-height: 41px;
+  line-height: 2rem;
   border-left: 1px solid #4e4e4e;
   padding: 0;
 }
@@ -281,7 +278,6 @@ html body.easy-admin-fixed {
   -moz-osx-font-smoothing: grayscale;
   display: inline-block;
   margin-right: 5px;
-  font-size: 15px;
   color: #aaa;
 }
 .easy-admin ul.user > li:first-child > a:before {
@@ -293,11 +289,9 @@ html body.easy-admin-fixed {
 .easy-admin ul.user > li > span,
 .easy-admin ul.user > li > a {
   display: block;
-  padding: 0 10px;
+  padding: 10px 13px;
   color: #e1e1e1;
-  font-size: 13px;
   font-weight: 200;
-  letter-spacing: 0.05em;
   font-family: 'Droid Sans', helvetica neue, arial, sans-serif;
 }
 .easy-admin ul.user > li > span {
@@ -316,12 +310,28 @@ html.exo-exists #exo-wrapper {
 
 
 /* media queries */
+
+@media #{$medium-up} {
+  .easy-admin ul li a,
+  .easy-admin ul li span {
+    font-size: 90%;
+  }
+}
+
+@media 
+(-webkit-min-device-pixel-ratio: 1.25), 
+(min-resolution: 120dpi){ 
+  .easy-admin ul li a,
+  .easy-admin ul li span {
+    font-size: 100%;
+  }
+}
+
 @media only screen and (min-width : 1025px) {
   .easy-admin ul.user > li > span,
   .easy-admin ul.user > li > a,
   .easy-admin ul.manager-menu li a,
   .easy-admin ul.manager-menu span.nolink {
-    font-size: 11px;
     text-transform: uppercase;
     font-weight: 400;
   }
