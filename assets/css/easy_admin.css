@@ -23,7 +23,7 @@ html body.easy-admin-fixed {
   border-bottom: 1px solid #4e4e4e;
 }
 .easy-admin + div {
-	margin-top: 42px;
+  margin-top: 42px;
 }
 
 /* box sizing elements and transitions */
@@ -125,12 +125,12 @@ html body.easy-admin-fixed {
 
 .easy-admin ul.manager-menu li a,
 .easy-admin ul.manager-menu span.nolink {
-    font-family: helvetica neue, arial, sans-serif;
+    font-family: 'Droid Sans', helvetica neue, arial, sans-serif;
     font-size: 13px;
     font-weight: 200;
     letter-spacing: 0.05em;
     line-height: 22px;
-    padding: 10px;
+    padding: 10px 13px;
     min-width: 22px;
     width: 100%;
     display: block;
@@ -171,7 +171,7 @@ html body.easy-admin-fixed {
   position: relative;
 }
 .easy-admin ul.manager-menu li li:hover a {
-  box-shadow: inset 3px 0 0 #ed3023;
+  box-shadow: inset 3px 0 0 #fff100;
 }
 
 /* items - hover */
@@ -185,7 +185,7 @@ html body.easy-admin-fixed {
 .easy-admin > ul.manager-menu > li:hover > span:before,
 .easy-admin > ul.user > li:hover > a:before,
 .easy-admin > ul.user > li:hover > span:before {
-  color: #ed3023;
+  color: #fff100;
 }
 .easy-admin ul.manager-menu li:hover li a:hover {
   background-color: #222;
@@ -231,7 +231,7 @@ html body.easy-admin-fixed {
     margin: 0 6px 0 0;
     font-size: 15px;
     color: #aaa;
-    content: "\f0fe";
+    content: "\f067";
 }
 .easy-admin ul.manager-menu li + li span:before,
 .easy-admin ul.manager-menu li + li a:before {
@@ -298,7 +298,7 @@ html body.easy-admin-fixed {
   font-size: 13px;
   font-weight: 200;
   letter-spacing: 0.05em;
-  font-family: helvetica neue, arial, sans-serif;
+  font-family: 'Droid Sans', helvetica neue, arial, sans-serif;
 }
 .easy-admin ul.user > li > span {
 
@@ -321,6 +321,8 @@ html.exo-exists #exo-wrapper {
   .easy-admin ul.user > li > a,
   .easy-admin ul.manager-menu li a,
   .easy-admin ul.manager-menu span.nolink {
-    font-size: 13px;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 400;
   }
 }
