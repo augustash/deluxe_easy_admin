@@ -3,7 +3,7 @@
  */
 
 html body.easy-admin-fixed {
-  margin-top: 40px;
+  margin-top: 45px;
 }
 
 .easy-admin {
@@ -12,7 +12,9 @@ html body.easy-admin-fixed {
   left: 0;
   right: 0;
   width: auto;
-  z-index:1000; 
+  z-index:1000;
+  font-family: 'Droid Sans', 'Helvetica Neue', arial, sans-serif;
+  height: 45px;
 
   background-color: #222;
   background-color: rgba(0,0,0,.8);
@@ -44,6 +46,8 @@ html body.easy-admin-fixed {
   transition: all .2s ease-in-out;
 }
 
+
+
 /* ------------------- */
 
 .easy-admin ul.manager-menu {
@@ -65,37 +69,60 @@ html body.easy-admin-fixed {
   display: block;
 }
 
-.easy-admin > ul.manager-menu {
+/* User & Manager Menus */
+.easy-admin > ul > li > a,
+.easy-admin > ul > li > span {
+  display: block;
+  font-size: 14px;
+  line-height: 45px;
+  padding: 0 12px;
+  color: #ddd;
 }
+.easy-admin > ul ul a {
+  display: block;
+  color: #ccc;
+  font-size: 13px;
+}
+.easy-admin ul.user > li,
+.easy-admin ul.manager-menu > li {
+  display: inline-block;
+  border-left: 1px solid #312b2c;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.easy-admin ul.user > li > a:before,
+.easy-admin ul.user > li > span:before,
+.easy-admin ul.manager-menu > li > a:before,
+.easy-admin ul.manager-menu > li > span:before {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  margin-right: 5px;
+  color: #aaa;
+}
+.easy-admin ul.user > li > a:hover,
+.easy-admin ul.manager-menu > li > a:hover {
+  text-decoration: none;
+}
+
+/* User Menu */
+.easy-admin ul.user > li:first-child > a:before {
+  content: "\f007";
+}
+.easy-admin ul.user > li:last-child > a:before {
+  content: "\f011";
+}
+
+/* Manager Menu */
 .easy-admin ul.manager-menu ul {
   z-index: 999;
 }
-.easy-admin ul.manager-menu li,
-.easy-admin ul.manager-menu li.expanded {
-  display: inline-block;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  border-right: 1px solid #312b2c;
-  width: auto;
-}
-
-.easy-admin ul.manager-menu li,
-.easy-admin ul.manager-menu li.expanded {
-  background-image: none;
-  list-style: none;
-  list-style-image: none;
-  list-style-type: none;
-}
-
-.easy-admin ul.manager-menu li ul.manager-menu li {
-  -moz-box-shadow: 0 0 1px 4px rgba(0,0,0,.75);
-  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.75);
-  box-shadow: 0 1px 4px rgba(0,0,0,.75);
-  border-right: 1px solid #312b2c;
-  border-left: 1px solid #312b2c;
-}
-.easy-admin ul.manager-menu li ul.manager-menu {
+.easy-admin ul.manager-menu li ul {
   max-height: 0;
   overflow: hidden;
   position: absolute;
@@ -104,63 +131,17 @@ html body.easy-admin-fixed {
   width: 100%;
   opacity: 0;
 }
-.easy-admin ul.manager-menu li:hover ul.manager-menu {
+.easy-admin ul.manager-menu li:hover ul {
   opacity: 1;
   max-height: 800px;
   overflow: visible;
 }
-
 .easy-admin ul.manager-menu li ul li {
+  border-right: 1px solid #312b2c;
+  border-left: 1px solid #312b2c;
   background-color: #333;
   width: 101.3%; /* Width to help Opera out */
 }
-
-.easy-admin ul.manager-menu a,
-.easy-admin ul.manager-menu span.nolink {
-  color: #e1e1e1;
-  display: block;
-  margin: 0;
-  text-decoration: none;
-}
-
-.easy-admin ul.manager-menu li a,
-.easy-admin ul.manager-menu span.nolink {
-    font-family: 'Droid Sans', helvetica neue, arial, sans-serif;
-    font-weight: 200;
-    letter-spacing: 0.05em;
-    line-height: 22px;
-    padding: 10px 13px;
-    min-width: 22px;
-    width: 100%;
-    display: block;
-    position: relative;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.easy-admin ul.manager-menu li li a {
-  line-height: 15px;
-  padding: 8px 10px 8px 11px;
-  line-height: 1.3em;
-}
-
-.easy-admin li:hover ul ul,
-.easy-admin li:hover ul ul ul,
-.easy-admin li:hover ul ul ul ul,
-.easy-admin li:hover ul ul ul ul ul {
-  
-}
-
-/* Lists nested under hovered list items */
-.easy-admin li:hover ul,
-.easy-admin li li:hover ul,
-.easy-admin li li li:hover ul,
-.easy-admin li li li li:hover ul,
-.easy-admin li li li li li:hover ul {
-  left: 0;
-}
-
 .easy-admin ul.manager-menu li li {
   border-bottom: 1px solid #312b2c;
   display: block;
@@ -172,11 +153,17 @@ html body.easy-admin-fixed {
 .easy-admin ul.manager-menu li li:hover a {
   box-shadow: inset 3px 0 0 #fff100;
 }
+.easy-admin ul.manager-menu li li a {
+  line-height: 15px;
+  padding: 8px 10px 8px 11px;
+  line-height: 1.3em;
+}
 
 /* items - hover */
 .easy-admin ul.manager-menu > li:hover > a,
 .easy-admin ul.manager-menu > li:hover > span,
-.easy-admin ul.user > li:hover > a {
+.easy-admin ul.user > li:hover > a,
+.easy-admin ul.user > li:hover > span {
   background-color: #222;
   color: #fff;
 }
@@ -199,53 +186,38 @@ html body.easy-admin-fixed {
   -webkit-border-radius: 0px;
   border-radius: 0px;
 }
-
 .easy-admin ul.manager-menu li:hover ul {
   height: auto;
 }
-
 .easy-admin ul.manager-menu li li.first a {
   text-align: left;
   width: auto;
 }
-
 .easy-admin ul.manager-menu li:hover ul li ul {
   margin-left: 160px;
   top: 0px;
 }
-
 .easy-admin ul.manager-menu li.home > a {
   background-repeat: no-repeat;
   text-indent: 0;
-  }
-.easy-admin ul.manager-menu li a:before,
-.easy-admin ul.manager-menu li span:before {
-    display: inline-block;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 2rem;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    margin: 0 6px 0 0;
-    color: #aaa;
-    content: "\f067";
 }
-.easy-admin ul.manager-menu li + li span:before,
-.easy-admin ul.manager-menu li + li a:before {
-    content: "\f067";
+
+/* Icons */
+.easy-admin ul.manager-menu li:nth-child(1) span:before,
+.easy-admin ul.manager-menu li:nth-child(1) a:before {
+  content: "\f0e4";
 }
-.easy-admin ul.manager-menu li + li + li span:before,
-.easy-admin ul.manager-menu li + li + li a:before {
-    content: "\f0ce";
+.easy-admin ul.manager-menu li:nth-child(2) span:before,
+.easy-admin ul.manager-menu li:nth-child(2) a:before {
+  content: "\f067";
 }
-.easy-admin ul.manager-menu li + li + li + li span:before,
-.easy-admin ul.manager-menu li + li + li + li a:before {
-    content: "\f0c0";
+.easy-admin ul.manager-menu li:nth-child(3) span:before,
+.easy-admin ul.manager-menu li:nth-child(3) a:before {
+  content: "\f0ce";
 }
-.easy-admin ul.manager-menu li + li + li + li + li span:before,
-.easy-admin ul.manager-menu li + li + li + li + li a:before {
-    content: "\f0c9";
+.easy-admin ul.manager-menu li:nth-child(4) span:before,
+.easy-admin ul.manager-menu li:nth-child(4) a:before {
+  content: "\f0c0";
 }
 .easy-admin ul.manager-menu li.home span:before,
 .easy-admin ul.manager-menu li.home a:before {
@@ -263,68 +235,25 @@ html body.easy-admin-fixed {
   float: right;
 }
 
-/* User Menu */
-.easy-admin ul.user > li {
-  display: inline-block;
-  line-height: 2rem;
-  border-left: 1px solid #312b2c;
-  padding: 0;
-}
-.easy-admin ul.user > li > a:before {
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  display: inline-block;
-  margin-right: 5px;
-  color: #aaa;
-}
-.easy-admin ul.user > li:first-child > a:before {
-  content: "\f007";
-}
-.easy-admin ul.user > li:last-child > a:before {
-  content: "\f011";
-}
-.easy-admin ul.user > li > span,
-.easy-admin ul.user > li > a {
-  display: block;
-  padding: 10px 13px;
-  color: #e1e1e1;
-  font-weight: 200;
-  font-family: 'Droid Sans', helvetica neue, arial, sans-serif;
-}
-.easy-admin ul.user > li > span {
-
-
-}
-.easy-admin ul.user > li > a:hover {
-  text-decoration: none;
-}
-
 /* eXo patch */
 html.exo-exists #exo-wrapper {
   margin-top: -42px;
 }
 
-
-
 /* media queries */
-
-@media #{$medium-up} {
-  .easy-admin ul li a,
-  .easy-admin ul li span {
-    font-size: 90%;
-  }
-}
-
 @media 
 (-webkit-min-device-pixel-ratio: 1.25), 
 (min-resolution: 120dpi){ 
-  .easy-admin ul li a,
-  .easy-admin ul li span {
-    font-size: 100%;
+  .easy-admin > ul > li > a,
+  .easy-admin > ul > li > span {
+    font-size: 16px;
+    line-height: 50px;
+  }
+  .easy-admin > ul ul a {
+    font-size: 14px;
+  }
+  .easy-admin {
+    height: 50px;
   }
 }
 
