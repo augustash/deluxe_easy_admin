@@ -91,6 +91,9 @@ html body.easy-admin-fixed {
   margin: 0;
   position: relative;
 }
+.easy-admin ul.manager-menu > li:last-child {
+  border-right: 1px solid #312b2c;
+}
 .easy-admin ul.user > li > a:before,
 .easy-admin ul.user > li > span:before,
 .easy-admin ul.manager-menu > li > a:before,
@@ -139,7 +142,7 @@ html body.easy-admin-fixed {
 .easy-admin ul.manager-menu li ul li {
   border-right: 1px solid #312b2c;
   border-left: 1px solid #312b2c;
-  background-color: #333;
+  background-color: #222;
   width: 101.3%; /* Width to help Opera out */
 }
 .easy-admin ul.manager-menu li li {
